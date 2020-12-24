@@ -1,36 +1,32 @@
-class Renderer {
+import user_template from './templates/user-template.hbs'
+import user_friends_template from './templates/user-friends-template.hbs'
+import quote_template from './templates/quote-template.hbs'
+import pokemon_template from './templates/pokemon-template.hbs'
+import meat_template from './templates/meat-template.hbs'
+
+export default class Renderer {
     renderUsers(users) {
-        let source = $("#user-template").html()
-        let template = Handlebars.compile(source)
-        let newHTML = template(users.results[0]);
+        let newHTML = user_template(users.results[0]);
         $(".user-container").empty().append(newHTML);
     }
 
     renderFriends(users) {
-        let sourceFriends = $("#user-friends-template").html()
-        let templateFriends = Handlebars.compile(sourceFriends)
-        let friendsHTML = templateFriends({friends: users.results.splice(1)})
+        let friendsHTML = user_friends_template({friends: users.results.splice(1)})
         $(".friends-container").empty().append(friendsHTML)
     }
 
     renderQuote(quoteInfo) {
-        let sourceQuote = $("#quote-template").html()
-        let templateQuote = Handlebars.compile(sourceQuote)
-        let quoteHTML = templateQuote(quoteInfo)
+        let quoteHTML = quote_template(quoteInfo)
         $(".quote-container").empty().append(quoteHTML)
     }
 
     renderPokemon(pokemonInfo) {
-        let sourcePokemon = $("#pokemon-template").html()
-        let templatePokemon = Handlebars.compile(sourcePokemon)
-        let pokemonHTML = templatePokemon(pokemonInfo)
+        let pokemonHTML = pokemon_template(pokemonInfo)
         $(".pokemon-container").empty().append(pokemonHTML)
     }
 
     renderMeat(meatText) {
-        let sourceMeat = $("#meat-template").html()
-        let templateMeat = Handlebars.compile(sourceMeat)
-        let meatHTML = templateMeat({text: meatText})
+        let meatHTML = meat_template({text: meatText})
         $(".meat-container").empty().append(meatHTML)
     }
 

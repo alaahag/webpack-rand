@@ -1,10 +1,10 @@
 {
-  "name": "userPage-API-Project-Instructor",
+  "name": "userpage-api-project-instructor",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,20 @@
   },
   "homepage": "https://github.com/Elevationacademy/userPage-API-Project-Instructor#readme",
   "dependencies": {
+    "babel-plugin-handlebars-inline-precompile": "^2.1.1",
     "handlebars": "^4.7.6",
+    "handlebars-loader": "^1.7.1",
+    "handlebars-template-loader": "^1.0.0",
     "jquery": "^3.5.1"
-  }
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "handlebars-webpack-plugin": "^2.2.1",
+    "hbsfy": "^2.8.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "description": ""
 }
